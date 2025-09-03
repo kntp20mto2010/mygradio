@@ -5,8 +5,11 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 
-REPO_PATH = "/notebooks/FramePack"  # resultsフォルダが含まれるGitリポジトリのパス
-RESULTS_PATH = os.path.join(REPO_PATH, "results")
+# REPO_PATH = "/notebooks/FramePack"  # resultsフォルダが含まれるGitリポジトリのパス
+# RESULTS_PATH = os.path.join(REPO_PATH, "results")
+
+REPO_PATH = "/notebooks/FramePack/results"
+RESULTS_PATH = REPO_PATH
 
 class GitAutoPushHandler(FileSystemEventHandler):
     def on_created(self, event):
