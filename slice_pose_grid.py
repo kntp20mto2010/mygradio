@@ -26,11 +26,11 @@ def slice_grid(
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Slice grid image into sub-images.")
-    parser.add_argument("--input", required=True, help="Input image path")
-    parser.add_argument("--output_dir", required=True, help="Output directory")
-    parser.add_argument("--width", type=int, required=True, help="Width of each slice")
-    parser.add_argument("--height", type=int, required=True, help="Height of each slice")
-    parser.add_argument("--base_name", default="pose", help="Base name for output files")
+    parser.add_argument("--input", required=False, help="Input image path",default="gradio/poseList.png")
+    parser.add_argument("--output_dir", required=False, help="Output directory",default="gradio")
+    parser.add_argument("--width", type=int, required=False, help="Width of each slice",default=304)
+    parser.add_argument("--height", type=int, required=False, help="Height of each slice",default=416)
+    parser.add_argument("--base_name", default="samplePose", help="Base name for output files")
     args = parser.parse_args()
 
     slice_grid(
