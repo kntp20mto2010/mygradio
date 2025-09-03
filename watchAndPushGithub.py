@@ -17,6 +17,8 @@ class GitAutoPushHandler(FileSystemEventHandler):
             print(f"New file detected: {event.src_path}")
             # Git add, commit, push
             try:
+                subprocess.run(["git", "config","--global","user.email","kntp20mto2010@gmail.com"], cwd=REPO_PATH)
+                subprocess.run(["git", "config","--global","user.name","kntp20mto2010"], cwd=REPO_PATH)
                 subprocess.run(["git", "add", event.src_path], cwd=REPO_PATH)
                 subprocess.run(["git", "commit", "-m", f"Add {os.path.basename(event.src_path)}"], cwd=REPO_PATH)
                 subprocess.run(["git", "push"], cwd=REPO_PATH)
