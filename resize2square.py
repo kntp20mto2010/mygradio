@@ -26,7 +26,7 @@ def parse_bg_color(bg_color_str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Resize images in a folder to square.")
-    parser.add_argument("folder", help="Path to the folder containing images")
+    parser.add_argument("--folder", help="Path to the folder containing images")
     parser.add_argument("--size", type=int, default=1024, help="Target square size (default: 1024)")
     parser.add_argument("--bg_color", type=parse_bg_color, default=(255,255,255), help="Background color as R,G,B (default: 255,255,255)")
     args = parser.parse_args()
